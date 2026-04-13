@@ -1,4 +1,5 @@
 :root {
+  --diabetes-blue: #0073CF;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -15,17 +16,18 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--diabetes-blue);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #0056a0;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  display: block;
+
+  width: 100%;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -66,3 +68,31 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Carousel Animation Styles */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.carousel-product-card {
+    animation: slideInRight 0.6s ease-out forwards;
+}
+
+.carousel-product-card:nth-child(2) {
+    animation-delay: 0.1s;
+    animation-duration: 0.7s;
+}
+
+.carousel-product-card:nth-child(3) {
+    animation-delay: 0.2s;
+    animation-duration: 0.8s;
+}
+
+
